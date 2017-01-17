@@ -1,0 +1,26 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
+
+war {
+	baseName = 'ESMSMain'
+	version = '0.0.1'
+}
+
+configurations {
+	providedRuntime
+}
+
+dependencies {
+	compile project(':ESMSWeb')
+	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+}
