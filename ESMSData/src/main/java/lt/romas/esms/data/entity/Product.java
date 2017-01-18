@@ -25,8 +25,9 @@ public class Product implements Serializable {
 	@GeneratedValue
 	private Integer id;
 
-	@Column(nullable = false)
-	private Integer groupId;
+	@ManyToOne
+	@JoinColumn(name = "groupId", referencedColumnName = "id", nullable = false)
+	private ProductGroup productGroup;
 
 	@Column(unique = true, nullable = false)
 	private String name;
