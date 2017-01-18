@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Index;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -34,4 +36,8 @@ public class Product implements Serializable {
 
 	@Column(nullable = false)
 	private BigDecimal price;
+
+	@ManyToOne
+	@JoinColumn(name = "unitId", referencedColumnName = "id", nullable = false)
+	private ProductUnit productUnit;
 }
