@@ -23,7 +23,7 @@ public class ProductGroupServiceImpl implements ProductGroupService {
 	}
 
 	@Override
-	public List<ProductGroup> findByParentId(Integer parentId) {
+	public List<ProductGroup> findByParentId(int parentId) {
 		return productGroupDAO.findByParentId(parentId);
 	}
 }

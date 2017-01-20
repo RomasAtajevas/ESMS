@@ -6,5 +6,5 @@ import lt.romas.esms.data.entity.Product;
 
 public interface ProductService {
 
-	List<Product> findByGroupId(Integer groupId);
+	List<Product> findByGroupId(int groupId);
 }

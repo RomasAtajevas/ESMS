@@ -11,5 +11,5 @@ import lt.romas.esms.data.entity.Product;
 public interface ProductDAO extends JpaRepository<Product, Integer> {
 
 	@Query("SELECT p FROM Product p WHERE p.productGroup.id = :groupId ORDER BY p.name ASC")
-	List<Product> findByGroupId(@Param("groupId") Integer groupId);
+	List<Product> findByGroupId(@Param("groupId") int groupId);
 }

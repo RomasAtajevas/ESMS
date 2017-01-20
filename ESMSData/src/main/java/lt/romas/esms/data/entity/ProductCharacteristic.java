@@ -24,8 +24,7 @@ public class ProductCharacteristic implements Serializable {
 	@GeneratedValue
 	private Integer id;
 
-	@Column(nullable = false)
-	private Integer productId;
+	private int productId;
 
 	@ManyToOne
 	@JoinColumn(name = "characteristicId", referencedColumnName = "id", nullable = false)

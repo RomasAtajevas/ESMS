@@ -14,5 +14,5 @@ public interface ProductGroupDAO extends JpaRepository<ProductGroup, Integer> {
 	List<ProductGroup> findTop();
 
 	@Query("SELECT pg FROM ProductGroup pg WHERE pg.parentId = :parentId ORDER BY pg.name ASC")
-	List<ProductGroup> findByParentId(@Param("parentId") Integer parentId);
+	List<ProductGroup> findByParentId(@Param("parentId") int parentId);
 }

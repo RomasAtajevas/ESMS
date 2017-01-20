@@ -8,5 +8,5 @@ public interface ProductGroupService {
 
 	List<ProductGroup> findTop();
 
-	List<ProductGroup> findByParentId(Integer parentId);
+	List<ProductGroup> findByParentId(int parentId);
 }

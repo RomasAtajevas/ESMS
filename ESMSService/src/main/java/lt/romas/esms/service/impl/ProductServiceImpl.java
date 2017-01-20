@@ -18,7 +18,7 @@ public class ProductServiceImpl implements ProductService {
 	private ProductDAO productDAO;
 
 	@Override
-	public List<Product> findByGroupId(Integer groupId) {
+	public List<Product> findByGroupId(int groupId) {
 		return productDAO.findByGroupId(groupId);
 	}
 }
