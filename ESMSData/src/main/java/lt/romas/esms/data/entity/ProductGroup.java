@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(indexes = { @Index(columnList = "parentId") })
+@Table(indexes = { @Index(columnList = "parentId"), @Index(columnList = "path") })
 public class ProductGroup implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -27,6 +27,5 @@ public class ProductGroup implements Serializable {
 	@Column(unique = true, nullable = false)
 	private String name;
 
-	@Column(unique = true, nullable = false)
 	private String path;
 }
