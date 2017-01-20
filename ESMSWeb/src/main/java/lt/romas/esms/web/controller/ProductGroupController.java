@@ -18,6 +18,14 @@ public class ProductGroupController {
 	@Autowired
 	private ProductGroupService productGroupService;
 
+	@RequestMapping(value = "/createGroups", method = RequestMethod.GET)
+	private String createTestGroups() {
+		productGroupService.createTopGroups();
+		productGroupService.createSubGroups(1, 1, 10);
+		productGroupService.createSubGroups(11, 11, 20);
+		return "Groups were created.";
+	}
+
 	@RequestMapping(value = "/findTop", method = RequestMethod.GET)
 	private List<ProductGroup> findTop() {
 		return productGroupService.findTop();
