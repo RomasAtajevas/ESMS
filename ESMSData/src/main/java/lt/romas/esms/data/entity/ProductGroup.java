@@ -28,4 +28,6 @@ public class ProductGroup implements Serializable {
 	private String name;
 
 	private String path;
+
+	private boolean isParent;
 }

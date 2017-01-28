@@ -43,8 +43,10 @@ public class ProductGroupServiceImpl implements ProductGroupService {
 			group.setParentId(parentId);
 			group.setPath((parent.getPath() == null ? "" : parent.getPath() + ".") + parentId);
 			groups.add(group);
+			parent.setParent(true);
 		});
 		productGroupDAO.save(groups);
+		productGroupDAO.save(parent);
 	}
 
 	@Override
