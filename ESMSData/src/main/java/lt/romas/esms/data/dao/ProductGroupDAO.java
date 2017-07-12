@@ -10,9 +10,9 @@ import lt.romas.esms.data.entity.ProductGroup;
 
 public interface ProductGroupDAO extends JpaRepository<ProductGroup, Integer> {
 
-	@Query("SELECT pg FROM ProductGroup pg WHERE pg.parentId IS NULL ORDER BY pg.name ASC")
-	List<ProductGroup> findTop();
+	@Query("SELECT pg FROM ProductGroup pg WHERE pg.parentGroup IS NULL ORDER BY pg.name ASC")
+	public List<ProductGroup> findTop();
 
-	@Query("SELECT pg FROM ProductGroup pg WHERE pg.parentId = :parentId ORDER BY pg.name ASC")
-	List<ProductGroup> findByParentId(@Param("parentId") int parentId);
+	@Query("SELECT pg FROM ProductGroup pg WHERE pg.parentGroup.id = :parentId ORDER BY pg.name ASC")
+	public List<ProductGroup> findByParentId(@Param("parentId") int parentId);
 }

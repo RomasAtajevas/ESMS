@@ -6,11 +6,9 @@ import lt.romas.esms.data.entity.ProductGroup;
 
 public interface ProductGroupService {
 
-	void createTopGroups();
+	public List<ProductGroup> findTop();
 
-	void createSubGroups(int parentId, int start, int max);
+	public List<ProductGroup> findByParentId(int parentId);
 
-	List<ProductGroup> findTop();
-
-	List<ProductGroup> findByParentId(int parentId);
+	public ProductGroup findOne(int id);
 }

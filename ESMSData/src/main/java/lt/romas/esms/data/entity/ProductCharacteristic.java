@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -24,7 +25,9 @@ public class ProductCharacteristic implements Serializable {
 	@GeneratedValue
 	private Integer id;
 
-	private int productId;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "productId", referencedColumnName = "id", nullable = false)
+	private Product product;
 
 	@ManyToOne
 	@JoinColumn(name = "characteristicId", referencedColumnName = "id", nullable = false)

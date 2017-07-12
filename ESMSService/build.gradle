@@ -10,4 +10,5 @@ buildscript {
 
 dependencies {
 	compile project(':ESMSData')
+	compile project(':ESMSCommon')
 }
